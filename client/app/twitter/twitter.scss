@@ -1,0 +1,18 @@
+.tdContainer {
+  clear: both;
+  padding-bottom: 3px;
+}
+.tdThumb {
+  float: left;
+  height: 100%;
+  padding-top: 3px;
+  padding-right: 3px;
+  max-width:8%;
+  min-width:50px;
+}
+.tdUser {
+  font-weight: bold;
+}
+.tdCaption {
+  word-wrap: break-word;
+}

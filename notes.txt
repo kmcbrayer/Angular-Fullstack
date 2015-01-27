@@ -1,0 +1,63 @@
+- turn off stupid touch controls for desktop
+- make navbar links just change position of pages and not link to new url, set active...
+- use grunt for production:
+  set siteName
+  set move everything to a public directory
+  stuff
+- checkboxes for adding and removing feeds:
+  pillbox - pull right, pageSet.list use active maybe?
+- write new tests
+- Write E2E tests
+    clear and logged in stuff:
+        see states_tests.txt
+- better sort algorythm for mainpage
+- research refresh tokens
+- feature: pull to refresh
+    -timestamp api calls from backend
+    -if inside 5 min hit cache
+    -if force param is used dont hit cache
+        || req.param('force') == true
+    -scope.pullToRefresh = function() {
+        $http({
+            url : 'api/blah/blah',
+            method : "GET",
+            params : {force : true}
+        ).success(function(data) {
+            dataList = data;
+        });
+    }
+
+
+deployment procedure
+    -main site (from kmcbrayer_com dir): uwsgi --socket :8001 --wsgi-file com/wsgi.py
+
+    -set node like " SET NODE_ENV production"
+    -figure out a way to do a deployment. heroku?
+
+
+E2E tests:
+in /Feeder, run:
+    webdriver-manager update
+    webdriver-manager start
+go to 'http://www.devsite.com:4444/wd/hub/static/resource/hub.html'
+thats it for now look into test/e2e/test-spec.js
+
+Postgres:
+db superusername - postgres, pw - km0***
+decent breakdown
+https://gigadom.wordpress.com/2014/07/20/working-with-node-js-and-postgresql/
+
+Forever:
+in /home/Feeder
+    stop: forever stopall
+    start: forever start server.js
+
+images:
+settings gear:
+    http://thenounproject.com/term/gear/2789/
+
+google developer console:
+https://console.developers.google.com/project
+
+
+

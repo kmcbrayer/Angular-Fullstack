@@ -1,0 +1,115 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+//code and pre background color
+$code-bkgnd-color: #444242 !important;
+$code-color: #FCFCFC !important;
+
+code,
+pre {
+  background-color: $code-bkgnd-color;
+  color: $code-color;
+}
+
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+//layering the main page
+.layer {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.first {
+  @extend .layer;
+  z-index: 4;
+}
+.second {
+  @extend .layer;
+  z-index: 3;
+}
+.third {
+  @extend .layer;
+  z-index: 2;
+}
+.fourth{
+  @extend .layer;
+  z-index: 1;
+}
+.container {
+  padding: 0 !important;
+}
+#content {
+  position: relative;
+  min-height: 100% !important;
+  height:100%;
+  width:100%;
+  float: left;
+}
+.dataContainer {
+  background-color: white;
+}
+.ngViewWrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.page {
+  position: absolute;
+  min-height: 100% !important;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+}
+
+.clear {
+  clear: both;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+@media screen and (max-width: 420px) {
+  body {
+    padding: 0 !important;
+  }
+  .nav a{
+    padding: 5px !important;
+
+  }
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'instagram/instagram.scss';
+@import 'main/main.scss';
+@import 'twitter/twitter.scss';
+@import 'youtube/youtube.scss';
+// endinjector
