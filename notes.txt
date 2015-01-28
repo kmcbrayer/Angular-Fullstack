@@ -1,4 +1,6 @@
 - turn off stupid touch controls for desktop
+    fixme
+- move http calls from main to service
 - make navbar links just change position of pages and not link to new url, set active...
 - use grunt for production:
   set siteName
@@ -27,6 +29,8 @@
         });
     }
 
+best media queries:
+http://stackoverflow.com/questions/13637106/what-are-the-best-width-ranges-for-media-queries
 
 deployment procedure
     -main site (from kmcbrayer_com dir): uwsgi --socket :8001 --wsgi-file com/wsgi.py

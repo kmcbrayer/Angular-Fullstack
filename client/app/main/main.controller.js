@@ -1,9 +1,12 @@
 'use strict';
 
 angular.module('angularFullstackApp')
-  .controller('MainCtrl', function ($scope, $http, $q, pageSet) {
+  .controller('MainCtrl', function ($scope, $http, $q, pageSetService, twitterFeedService) {
     //set the pages
-    $scope.pageSet = pageSet.list;
+    $scope.pageSet = pageSetService.list;
+    twitterFeedServiceFeedService.query(function(data) {
+      $scope.twitterList = data;
+    });
     //get the page data
     var twitterList, youtubeList, instagramList = [];
     $scope.dataList = [];
@@ -12,7 +15,6 @@ angular.module('angularFullstackApp')
       $scope.twitterList = twitterList;
     });
 
-    console.log(twitterList);
     $q.all([
       $http.get('/api/twitter/statuses').success(function(data) {
         twitterList = data;

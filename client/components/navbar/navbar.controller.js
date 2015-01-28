@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('angularFullstackApp')
-  .controller('NavbarCtrl', function ($scope, $location, pageSet, UserService) {
-    $scope.pageSet = pageSet.list;
+  .controller('NavbarCtrl', function ($scope, $location, pageSetService, UserService) {
+    $scope.pageSet = pageSetService.list;
     $scope.user = UserService.userData;
 
     //set the page links if logged in

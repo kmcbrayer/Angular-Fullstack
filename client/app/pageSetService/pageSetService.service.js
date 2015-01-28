@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularFullstackApp')
-  .service('pageSet', function() {
+  .service('pageSetService', function() {
     this.list = [
       {
         name: "Main",
