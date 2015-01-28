@@ -46,7 +46,7 @@ exports.statuses = function(store){
       }
       else{
         log.info("user not logged into twitter");
-        res.json({});
+        res.json([]);
       }
     } else {
       log.info("hit twitter_cache");

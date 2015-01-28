@@ -1,6 +1,9 @@
 - turn off stupid touch controls for desktop
     fixme
-- move http calls from main to service
+- make pageset a backend service?
+  rethink pageset objects
+  maybe turn pageset into a class like object?
+  move page turn fxns to pageSetService
 - make navbar links just change position of pages and not link to new url, set active...
 - use grunt for production:
   set siteName
@@ -9,6 +12,14 @@
 - checkboxes for adding and removing feeds:
   pillbox - pull right, pageSet.list use active maybe?
 - write new tests
+  0. mock objects for service data
+  1. all services return data:
+    length !== 0
+  2. main page dataList concats feeds
+    length == var ammount
+  3. main page sorts feeds correctly
+    use mock objets.date
+
 - Write E2E tests
     clear and logged in stuff:
         see states_tests.txt

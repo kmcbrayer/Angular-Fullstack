@@ -49,7 +49,7 @@ exports.subscriptions = function(store) {
           });
       } else {
         log.info('user not logged in to youtube');
-        res.json({});
+        res.json([]);
       }
     }
     else {

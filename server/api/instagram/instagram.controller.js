@@ -41,7 +41,7 @@ exports.feed = function(store) {
         });
       } else {
         log.info('not logged in to instagram');
-        res.json({});
+        res.json([]);
       }
     } else {
       log.info('hit instagram_cache');
