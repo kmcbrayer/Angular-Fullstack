@@ -32,7 +32,7 @@ angular.module('angularFullstackApp')
               ele.animate({left: 0},400,'swing');
             },
             'cancel': function(coords) {
-              // same as 'end'
+              ele.animate({left: 0},400,'swing');
             }
           });
         }

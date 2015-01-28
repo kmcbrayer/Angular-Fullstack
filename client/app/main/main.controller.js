@@ -19,20 +19,8 @@ angular.module('angularFullstackApp')
       $scope.dataList = addSorted($scope.dataList,data);
     });
 
-    $scope.pageTurnRight = function() {
-      for (var i in $scope.pageSet) {
-        if ($scope.pageSet[i].position === 'first') {
-          $scope.pageSet[i].position = 'fourth';
-        } else if ($scope.pageSet[i].position === 'second') {
-          $scope.pageSet[i].position = 'first';
-        } else if ($scope.pageSet[i].position === 'third') {
-          $scope.pageSet[i].position = 'second';
-        } else {
-          $scope.pageSet[i].position = 'third';
-        }
-      }
-      $scope.$digest();
-    };
+    $scope.pageTurnRight = pageSetService.pageTurnRight();
+
     $scope.pageTurnLeft = function() {
       for (var i in $scope.pageSet) {
         if ($scope.pageSet[i].position === 'first') {
@@ -45,7 +33,6 @@ angular.module('angularFullstackApp')
           $scope.pageSet[i].position = 'first';
         }
       }
-      $scope.$digest();
     };
 
     //TODO: better sorting algorythm

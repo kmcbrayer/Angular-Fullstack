@@ -1,5 +1,6 @@
   <div class="page" ng-repeat="page in pageSet" touch-slide-controller>
-
+    <button ng-click="pageTurnRight()">right</button>
+    <button ng-click="pageTurnLeft()">left</button>
     <div ng-if="page.name == 'Instagram'">
       <div ng-class="page.position" >
         <div ng-repeat="article in instagramList" class="dataContainer">

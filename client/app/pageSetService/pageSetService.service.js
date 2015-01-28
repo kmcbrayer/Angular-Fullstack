@@ -2,7 +2,9 @@
 
 angular.module('angularFullstackApp')
   .service('pageSetService', function() {
-    this.list = [
+    var self = this;
+
+    self.list = [
       {
         name: "Main",
         isActive: true,
@@ -32,4 +34,22 @@ angular.module('angularFullstackApp')
         pageTarget : '_self'
       }
     ];
+    //page turn right
+    self.pageTurnRight = function() {
+      for (var i in self.list) {
+        if (self.list[i].position === 'first') {
+          self.list[i].position = 'fourth';
+          self.isActive = false;
+        } else if (self.list[i].position === 'second') {
+          self.list[i].position = 'first';
+          self.isActive = true;
+        } else if (self.list[i].position === 'third') {
+          self.list[i].position = 'second';
+          self.isActive = false;
+        } else {
+          self.list[i].position = 'third';
+          self.isActive = false;
+        }
+      }
+    }
   });
