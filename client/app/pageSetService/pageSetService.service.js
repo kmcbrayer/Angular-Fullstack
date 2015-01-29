@@ -39,16 +39,34 @@ angular.module('angularFullstackApp')
       for (var i in self.list) {
         if (self.list[i].position === 'first') {
           self.list[i].position = 'fourth';
-          self.isActive = false;
+          self.list[i].isActive = false;
         } else if (self.list[i].position === 'second') {
           self.list[i].position = 'first';
-          self.isActive = true;
+          self.list[i].isActive = true;
         } else if (self.list[i].position === 'third') {
           self.list[i].position = 'second';
-          self.isActive = false;
+          self.list[i].isActive = false;
         } else {
           self.list[i].position = 'third';
-          self.isActive = false;
+          self.list[i].isActive = false;
+        }
+      }
+    }
+
+    self.pageTurnLeft = function() {
+      for (var i in self.list) {
+        if (self.list[i].position === 'first') {
+          self.list[i].position = 'second';
+          self.list[i].isActive = false;
+        } else if (self.list[i].position === 'second') {
+          self.list[i].position = 'third';
+          self.list[i].isActive = false;
+        } else if (self.list[i].position === 'third') {
+          self.list[i].position = 'fourth';
+          self.list[i].isActive = false;
+        } else {
+          self.list[i].position = 'first';
+          self.list[i].isActive = true;
         }
       }
     }

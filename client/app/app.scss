@@ -17,6 +17,13 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 //code and pre background color
 $code-bkgnd-color: #444242 !important;
 $code-color: #FCFCFC !important;
+$light-grey: #FFFFFF;
+
+.full_height {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
 
 code,
 pre {
@@ -25,11 +32,10 @@ pre {
 }
 
 html,
-body,
-ul,
-ol {
+body {
   margin: 0;
   padding: 0;
+  @extend .full_height;
 }
 
 //layering the main page
@@ -59,22 +65,15 @@ ol {
   padding: 0 !important;
 }
 #content {
-  position: relative;
-  min-height: 100% !important;
-  height:100%;
-  width:100%;
+  @extend .full_height;
   float: left;
 }
-.dataContainer {
-  background-color: white;
-}
 .ngViewWrapper {
-  height: 100%;
-  width: 100%;
-  position: relative;
+  @extend .full_height;
 }
 .page {
   position: absolute;
+  background-color: $light-grey;
   min-height: 100% !important;
   height:100%;
   width:100%;
@@ -82,8 +81,16 @@ ol {
   left:0;
 }
 
+.hideBeneath {
+  background-color: $light-grey;
+}
+
 .clear {
   clear: both;
+}
+
+.container {
+  @extend .full_height;
 }
 
 .container-narrow > hr {

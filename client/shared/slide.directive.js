@@ -11,6 +11,7 @@ angular.module('angularFullstackApp')
           var enabled = true;
           $swipe.bind(ele, {
             'start': function(coords) {
+              //reset for next swipe
               enabled = true;
               startx = coords.x;
             },
@@ -20,18 +21,20 @@ angular.module('angularFullstackApp')
                 ele.css('left',delta);
                 if (delta < -100) {
                   enabled = false;
-                  scope.pageTurnRight();
+                  //animate left
+                  pageSetService.pageTurnRight()
                 }
                 if (delta > 100) {
                   enabled = false;
-                  scope.pageTurnLeft();
+                  //animate right
+                  pageSetService.pageTurnLeft();
                 }
               }
             },
             'end': function(coords) {
               ele.animate({left: 0},400,'swing');
             },
-            'cancel': function(coords) {
+            'cancel': function() {
               ele.animate({left: 0},400,'swing');
             }
           });
