@@ -13,7 +13,7 @@ angular.module('angularFullstackApp')
         var twitData = {
           isLoggedIn :  true,
           userName :    user._json.screen_name,
-          displayName : user.displayName,
+          displayName : user._json.displayName,
           photoUrl :    user.photos[0].value
         };
         userData.twitData = twitData;
@@ -28,7 +28,7 @@ angular.module('angularFullstackApp')
           displayName : user.displayName,
           photoUrl : user._json.data.profile_picture
         };
-        userData.igData = igData;
+        console.log(igData)
       });
     };
 

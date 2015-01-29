@@ -1,6 +1,6 @@
 // Karma configuration
 // http://karma-runner.github.io/0.10/config/configuration-file.html
-
+'use strict';
 module.exports = function(config) {
   config.set({
     // base path, that will be used to resolve files and exclude
@@ -18,15 +18,14 @@ module.exports = function(config) {
       'client/bower_components/angular-cookies/angular-cookies.js',
       'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/angular-route/angular-route.js',
+      'client/bower_components/angular-touch/angular-touch.js',
       'client/bower_components/lodash/dist/lodash.compat.js',
-      'client/app/app.js',
-      'client/app/app.coffee',
+
+      'client/app/app.js',//load app first!!
+
+      'test/mock_objects/*.js',
       'client/app/**/*.js',
-      'client/app/**/*.coffee',
       'client/components/**/*.js',
-      'client/components/**/*.coffee',
-      'client/app/**/*.jade',
-      'client/components/**/*.jade',
       'client/app/**/*.html',
       'client/components/**/*.html'
     ],
@@ -34,7 +33,7 @@ module.exports = function(config) {
     preprocessors: {
       '**/*.jade': 'ng-jade2js',
       '**/*.html': 'html2js',
-      '**/*.coffee': 'coffee',
+      '**/*.coffee': 'coffee'
     },
 
     ngHtml2JsPreprocessor: {

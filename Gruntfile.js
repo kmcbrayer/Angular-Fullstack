@@ -407,7 +407,6 @@ module.exports = function (grunt) {
         'sass',
       ],
       test: [
-        'sass',
       ],
       debug: {
         tasks: [
@@ -613,9 +612,7 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'clean:server',
         'env:all',
-        'injector:sass',
-        'concurrent:test',
-        'injector',
+        //'injector',
         'autoprefixer',
         'karma'
       ]);

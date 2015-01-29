@@ -22,7 +22,7 @@ angular.module('angularFullstackApp')
                 if (delta < -100) {
                   enabled = false;
                   //animate left
-                  pageSetService.pageTurnRight()
+                  pageSetService.pageTurnRight();
                 }
                 if (delta > 100) {
                   enabled = false;
@@ -40,5 +40,5 @@ angular.module('angularFullstackApp')
           });
         }
       }
-    }
+    };
   });
