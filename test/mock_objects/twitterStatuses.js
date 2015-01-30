@@ -13,7 +13,7 @@ angular.module('angularFullstackApp')
         entities: {},//objects n stuff
         userLink: 'http://google.com',
         user: 'A User',
-        photo: 'http://google.com',
+        photo: 'http://google.com'
       },
       {
         type: 'twitter',
@@ -25,7 +25,7 @@ angular.module('angularFullstackApp')
         entities: {},//objects n stuff
         userLink: 'http://google.com',
         user: 'A Second User',
-        photo: 'http://google.com',
+        photo: 'http://google.com'
       }
     ]
 );

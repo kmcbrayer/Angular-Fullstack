@@ -28,14 +28,13 @@ describe('Service: UserService', function () {
 
     scope = $rootScope.$new();
     service = UserService;
-
+    service.updateTwitterInfo();
+    service.updateYoutubeInfo();
+    service.updateInstagramInfo();
   }));
 
   it('should get user data from backend', function () {
     $httpBackend.flush();
-    service.updateTwitterInfo();
-    service.updateYoutubeInfo();
-    service.updateInstagramInfo();
 
     expect(service.userData.twitData.isLoggedIn).toBe(true);
     expect(service.userData.igData.isLoggedIn).toBe(true);

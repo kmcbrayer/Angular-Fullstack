@@ -26,6 +26,7 @@ module.exports = function(config) {
       'test/mock_objects/*.js',
       'client/app/**/*.js',
       'client/components/**/*.js',
+      'client/shared/**/*.js',
       'client/app/**/*.html',
       'client/components/**/*.html'
     ],

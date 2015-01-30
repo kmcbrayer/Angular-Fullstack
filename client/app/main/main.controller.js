@@ -24,17 +24,17 @@ angular.module('angularFullstackApp')
     //set data
     twitterFeedService.query(function(data) {
       $scope.twitterPage.dataList = data;
-      $scope.mainPage.dataList = addSorted($scope.mainPage.dataList,data);
+      $scope.mainPage.dataList = $scope.addSorted($scope.mainPage.dataList,data);
     });
 
     youtubeFeedService.query(function(data) {
       $scope.youtubePage.dataList = data;
-      $scope.mainPage.dataList = addSorted($scope.mainPage.dataList,data);
+      $scope.mainPage.dataList = $scope.addSorted($scope.mainPage.dataList,data);
     });
 
     instagramFeedService.query(function(data) {
       $scope.instagramPage.dataList = data;
-      $scope.mainPage.dataList = addSorted($scope.mainPage.dataList,data);
+      $scope.mainPage.dataList = $scope.addSorted($scope.mainPage.dataList,data);
     });
 
     $scope.pageTurnRight = function(){
@@ -46,7 +46,7 @@ angular.module('angularFullstackApp')
     };
 
     //TODO: better sorting algorythm
-    function addSorted(mainList, dataList) {
+    $scope.addSorted = function(mainList, dataList) {
       mainList = mainList.concat(dataList);
       return mainList.sort(function(a,b) {
         if(a.date > b.date)

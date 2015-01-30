@@ -6,7 +6,7 @@ angular.module('angularFullstackApp')
     {
       "type" : "youtube",
       "videoId" : 777,
-      "date" : "a date string",
+      "date" : "Tue Jan 12 2015",
       "title" : "a title",
       "thumb" : "url to thumb",
       "channelTitle" : "A channel title"
@@ -14,7 +14,7 @@ angular.module('angularFullstackApp')
     {
       "type" : "youtube",
       "videoId" : 722,
-      "date" : "a date string",
+      "date" : "Tue Jan 14 2015",
       "title" : "a title",
       "thumb" : "url to thumb",
       "channelTitle" : "A channel title"

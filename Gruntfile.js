@@ -612,7 +612,7 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'clean:server',
         'env:all',
-        //'injector',
+        'injector',
         'autoprefixer',
         'karma'
       ]);

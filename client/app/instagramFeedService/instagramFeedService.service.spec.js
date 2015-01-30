@@ -22,7 +22,7 @@ describe('Service: Instagram Feed', function() {
 
   it('should return 2 instagram feeds', function() {
     $httpBackend.flush();
-    expect(result[0].id).toBe('791336301699919946_210318195');
+    expect(result[0].type).toBe('instagram');
     expect(result.length).toBe(2);
   });
 });

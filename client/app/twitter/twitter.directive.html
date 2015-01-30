@@ -3,6 +3,6 @@
     <a ng-href="{{tweet.userLink}}"><span class="tdUser">{{tweet.user}}</span></a>
     <span class="tdDate">{{tweet.date | date : 'short'}}</span>
   </div>
-  <image class="tdThumb" ng-src="{{tweet.photo}}">
+  <image class="tdThumb" ng-src="{{tweet.photo}}" />
   <div class="tdCaption" ng-bind-html="tweet.caption | twitterCaption"></div>
 </div>
