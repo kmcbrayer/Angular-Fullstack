@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularFullstackApp')
-  .service('pageSetService', function(pageSet) {
+  .service('pageSetService', function($rootScope, pageSet) {
     var self = this;
 
     self.list = pageSet;
@@ -23,6 +23,7 @@ angular.module('angularFullstackApp')
           self.list[i].isActive = false;
         }
       }
+      $rootScope.$broadcast('turnRight', {newList: self.list});
     }
 
     self.pageTurnLeft = function() {

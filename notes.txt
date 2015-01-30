@@ -1,5 +1,11 @@
-- check slide directive
+- check slide directive:
+
+  if start x is close to left side of screen do a turn right
+  if start x is close to right to a turn left
 - nav skip non active pages
+- article css:
+  article class that will go on like "tdContainer" and stuff
+
 - make navbar links just change position of pages and not link to new url, set active...
 - use grunt for production:
   set siteName
