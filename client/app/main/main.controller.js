@@ -3,6 +3,10 @@
 angular.module('angularFullstackApp')
   .controller('MainCtrl', function ($scope, $http, $q, pageSetService,
                                     twitterFeedService, youtubeFeedService, instagramFeedService) {
+
+    $scope.$on('pageTurn', function() {
+      $scope.$digest();
+    });
     //set the pages
     $scope.mainPage = {
       dataList : [],

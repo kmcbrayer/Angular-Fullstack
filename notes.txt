@@ -1,7 +1,5 @@
-- check slide directive:
-
-  if start x is close to left side of screen do a turn right
-  if start x is close to right to a turn left
+TODO: fix logout link:
+  api backend needs to be added
 - nav skip non active pages
 - article css:
   article class that will go on like "tdContainer" and stuff

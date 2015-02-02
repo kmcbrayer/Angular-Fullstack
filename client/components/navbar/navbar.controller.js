@@ -5,6 +5,10 @@ angular.module('angularFullstackApp')
     $scope.pageSet = pageSetService.list;
     $scope.user = UserService.userData;
 
+    $scope.$on('pageTurn', function() {
+      $scope.$digest();
+    });
+
     //set the page links if logged in
     //twitter
     if($scope.user.twitData.isLoggedIn) {
@@ -36,13 +40,13 @@ angular.module('angularFullstackApp')
     }
 
     var path = $location.path();
-    if(path === "/") {
+    if(path === '/') {
       setActive('Main', $scope.pageSet);
-    } else if(path === "/twitter") {
+    } else if(path === '/twitter') {
       setActive('Twitter', $scope.pageSet);
-    } else if(path === "/instagram") {
+    } else if(path === '/instagram') {
       setActive('Instagram', $scope.pageSet);
-    } else if(path === "/youtube") {
+    } else if(path === '/youtube') {
       setActive('Youtube', $scope.pageSet);
     }
 

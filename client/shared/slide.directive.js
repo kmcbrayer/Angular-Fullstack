@@ -1,10 +1,14 @@
 'use strict';
 
 angular.module('angularFullstackApp')
-  .directive('touchSlideController', function($swipe, pageSetService) {
+  .directive('touchSlideController', function($rootScope, $swipe, pageSetService) {
     return {
       restrict: 'A',
       link: function(scope,ele,attrs,ctrl) {
+        function slideBack() {
+          ele.animate({left: 0},400,'swing');
+          time = 0;
+        }
         var width = Math.max( $(window).width(), window.innerWidth);
         if (width <= 780 ) {
           var startx, delta;
@@ -28,23 +32,21 @@ angular.module('angularFullstackApp')
                   //animate left
                   pageSetService.pageTurnRight();
                   //$('.first').animate({})
-                  scope.$digest();
+                  $rootScope.$broadcast('pageTurn');
                 }
                 if (coords.x > width-50) {
                   enabled = false;
                   //animate right
                   pageSetService.pageTurnLeft();
-                  scope.$digest();
+                  $rootScope.$broadcast('pageTurn');
                 }
               }
             },
             'end': function(coords) {
-              ele.animate({left: 0},400,'swing');
-              time = 0;
+              slideBack();
             },
             'cancel': function() {
-              ele.animate({left: 0},400,'swing');
-              time = 0;
+              slideBack();
             }
           });
         }
