@@ -610,7 +610,7 @@ module.exports = function (grunt) {
 
     else if (target === 'client') {
       return grunt.task.run([
-        'clean:server',
+        //'clean:server',
         'env:all',
         'injector',
         'autoprefixer',
@@ -620,7 +620,6 @@ module.exports = function (grunt) {
 
     else if (target === 'e2e') {
       return grunt.task.run([
-        'clean:server',
         'env:all',
         'env:test',
         'injector:sass',
@@ -635,7 +634,8 @@ module.exports = function (grunt) {
 
     else grunt.task.run([
       'test:server',
-      'test:client'
+      'test:client',
+      'test:e2e'
     ]);
   });
 
@@ -659,7 +659,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
+    //'newer:jshint',
     'test',
     'build'
   ]);

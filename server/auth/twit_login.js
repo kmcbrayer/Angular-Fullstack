@@ -2,6 +2,7 @@
 
 var TwitterStrategy = require('passport-twitter').Strategy;
 var secrets = require('../config/secrets');
+var config = require('../config/environment');
 var log = require('../config/winston');
 var passport = require('passport');
 
@@ -17,12 +18,12 @@ module.exports = function(app,store) {
   passport.use(new TwitterStrategy({
     consumerKey: secrets.twitter.consumerKey,
     consumerSecret: secrets.twitter.consumerSecret,
-    callbackURL: "http://www.devsite.com:9000/auth/twitter/callback"
+    callbackURL: "http://www."+config.siteName+"/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
     process.nextTick(function () {
       store.setItem('twit_data', JSON.stringify(profile));
-      log.info('user logged into twitter, and data set')
+      log.info('user logged into twitter, and data set');
       return done(null, profile);
     });
   }
@@ -37,8 +38,8 @@ module.exports = function(app,store) {
       { failureRedirect: '/' }
     ),
     function(req, res) {
-      log.info('auth success, redirect back to main page')
+      log.info('auth success, redirect back to main page');
       res.redirect('/');
     }
   );
-}
+};

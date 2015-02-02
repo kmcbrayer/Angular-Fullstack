@@ -8,14 +8,14 @@ angular.module('angularFullstackApp')
     $scope.$on('pageTurn', function() {
       $scope.$digest();
     });
-
+    /*
     //set the page links if logged in
     //twitter
     if($scope.user.twitData.isLoggedIn) {
       //angular ng-repeat auto sorts so I have to use an array
       for (var i in $scope.pageSet) {
         if ($scope.pageSet[i].name === 'Twitter') {
-          $scope.pageSet[i].pageTarget = toggleTarget($scope.pageSet[i].pageTarget);
+          //$scope.pageSet[i].pageTarget = toggleTarget($scope.pageSet[i].pageTarget);
           $scope.pageSet[i].href = '/twitter';
         }
       }
@@ -24,7 +24,7 @@ angular.module('angularFullstackApp')
     if($scope.user.ytData.isLoggedIn) {
       for (var i in $scope.pageSet) {
         if ($scope.pageSet[i].name === 'Youtube') {
-          $scope.pageSet[i].pageTarget = toggleTarget($scope.pageSet[i].pageTarget);
+         //$scope.pageSet[i].pageTarget = toggleTarget($scope.pageSet[i].pageTarget);
           $scope.pageSet[i].href = '/youtube';
         }
       }
@@ -33,11 +33,12 @@ angular.module('angularFullstackApp')
     if($scope.user.igData.isLoggedIn) {
       for (var i in $scope.pageSet) {
         if ($scope.pageSet[i].name === 'Instagram') {
-          $scope.pageSet[i].pageTarget = toggleTarget($scope.pageSet[i].pageTarget);
+          //$scope.pageSet[i].pageTarget = toggleTarget($scope.pageSet[i].pageTarget);
           $scope.pageSet[i].href = '/instagram';
         }
       }
     }
+    */
 
     var path = $location.path();
     if(path === '/') {
