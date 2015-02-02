@@ -542,8 +542,15 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    bower: {
+      install: {
+        // blah blah blah
+      }
     }
   });
+
+  grunt.loadNpmTasks('grunt-bower-task');
 
   // Used for delaying livereload until after server has restarted
   grunt.registerTask('wait', function () {
@@ -641,6 +648,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'bower:install',
     'injector:sass',
     'concurrent:dist',
     'injector',
