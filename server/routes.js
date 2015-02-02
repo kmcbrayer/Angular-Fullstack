@@ -13,6 +13,8 @@ module.exports = function(app,passport,store) {
   app.use('/api/youtube', require('./api/youtube')(passport,store));
   //instagram
   app.use('/api/instagram', require('./api/instagram')(passport,store));
+  //utiliy functions
+  app.use('/api/utils', require('./api/utils')(store));
 
   //passport auth
   require('./auth/twit_login')(app,store);
