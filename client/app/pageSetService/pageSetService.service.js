@@ -23,7 +23,7 @@ angular.module('angularFullstackApp')
           self.list[i].isActive = false;
         }
       }
-    }
+    };
 
     self.pageTurnLeft = function() {
       for (var i in self.list) {
@@ -41,6 +41,6 @@ angular.module('angularFullstackApp')
           self.list[i].isActive = true;
         }
       }
-    }
+    };
 
   });

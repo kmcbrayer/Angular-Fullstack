@@ -1,3 +1,28 @@
+- add database: postgresql
+  button to save/favorite
+  install:
+    download the .exe
+    run it
+    data location at C:\Program Files\PostgreSql\9.4\data
+PostgreSQL notes:
+  user: postgres pword: km0****
+  login command = psql --username=postgres
+  psql commands:
+    exit: \q
+    show databases: \l
+    show users: \du
+    create user:
+      CREATE USER <BLAH> WITH PASSWORD 'BLAH_BLAH';
+      GRANT ALL PRIV..LEGES ON DATABASE <blah> TO <blah_blah>;
+    create database:
+      CREATE DATABASE <blah> TEMPLATE template0 CONNECTION LIMIT 100;
+  set environment variables:
+    PGDATA = C:\Program Files\PostgreSQL\9.4\data
+  set port in postgresql.conf
+    port = 5433
+
+
+
 - navbar
   after login nav changes page spots and not link to auth
 - Write E2E tests
