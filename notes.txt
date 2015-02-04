@@ -42,6 +42,8 @@ PostgreSQL notes:
       download the .exe from db...thingy
       data location at C:\Program Files\PostgreSql\9.4\data
   user: postgres pword: km0****
+  start server:
+    postgres -D C:\Program Files\PostgreSQL\9.4\data
   login command = psql --username=postgres
   psql commands:
     exit: \q
@@ -49,17 +51,26 @@ PostgreSQL notes:
     show users: \du
     create user:
       CREATE USER <BLAH> WITH PASSWORD '<BLAH_BLAH>';
+    delete user://must remove all privileges first
+      DROP USER <BLAH>;
     create database:
       CREATE DATABASE <blah> TEMPLATE template0 CONNECTION LIMIT 100;
     grant access to your user:
       GRANT ALL PRIVILEGES ON DATABASE <blah> TO <blah_blah>;
+    remove privileges:
+      REVOKE ALL PRIVILEGES ON DATABASE <blah> FROM <blah_blah>;
   set environment variables:
     PGDATA = C:\Program Files\PostgreSQL\9.4\data
   settings in postgresql.conf:
-    port = 5433
+    port = 5432
     data_directory = '/Program Files/PostgreSQL/9.4/data'
   run
     pg_ctl start
+
+  correct sequence of events:
+  start server with : postgres -D '<your/data/directory>'
+  make a connection with : pg_ctl start
+  make changes with : psql --username=postgres
 
 E2E tests:
 in /Feeder, run:
