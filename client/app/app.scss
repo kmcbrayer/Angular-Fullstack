@@ -70,6 +70,7 @@ body {
 }
 .container {
   padding: 0 !important;
+  @extend .full_height;
 }
 #content {
   @extend .full_height;
@@ -93,10 +94,6 @@ body {
 
 .clear {
   clear: both;
-}
-
-.container {
-  @extend .full_height;
 }
 
 .container-narrow > hr {
