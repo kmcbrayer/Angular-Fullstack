@@ -23,6 +23,7 @@
     "passport-google-oauth": "^0.1.5",
     "passport-instagram": "^0.1.2",
     "passport-twitter": "^1.0.2",
+    "pg": "^4.2.0",
     "serve-favicon": "~2.0.1",
     "twit": "^1.1.18",
     "winston": "^0.8.3",
