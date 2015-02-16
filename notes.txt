@@ -1,4 +1,8 @@
-- add database: postgresql
+- add database: mongo
+  1. save user info on login
+    http://stackoverflow.com/questions/18747044/how-to-keep-a-user-logged-on-is-it-possible-with-expressjs-and-passport
+  2. save user tokens and profiles after social login
+
   button to save/favorite
 
 - navbar
@@ -37,6 +41,8 @@ deployment procedure
 
     -set node like " SET NODE_ENV production"
     -figure out a way to do a deployment. heroku?
+
+
 PostgreSQL notes:
   install:
       download the .exe from db...thingy
@@ -71,6 +77,17 @@ PostgreSQL notes:
   start server with : postgres -D '<your/data/directory>'
   make a connection with : pg_ctl start
   make changes with : psql --username=postgres
+
+MongoDB notes:
+  install from main page
+  add mongo/bin to PATH
+  make data directory wherever
+  start DB: mongod --dbpath "path/to/data/directory"
+  start mongo shell: mongo
+    new db: use <db_name>
+    show current db: db
+    show all dbs: show dbs
+
 
 E2E tests:
 in /Feeder, run:

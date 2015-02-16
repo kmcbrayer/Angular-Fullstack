@@ -4,6 +4,7 @@ angular.module('angularFullstackApp')
   .controller('MainCtrl', function ($scope, $http, $q, pageSetService,
                                     twitterFeedService, youtubeFeedService, instagramFeedService) {
 
+    //if
     $scope.$on('pageTurn', function() {
       $scope.$digest();
     });
@@ -57,7 +58,7 @@ angular.module('angularFullstackApp')
           return -1;
         if(a.date < b.date)
           return 1;
-        return 0
+        return 0;
       });
-    }
+    };
   });
