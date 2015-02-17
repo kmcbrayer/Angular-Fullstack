@@ -1,20 +1,17 @@
 /*
 Syntax error: File to import not found or unreadable: bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.
               Load path: C:/Users/km07/WebstormProjects/Angular-Fullstack/client/app
-        on line 4 of app.scss
+        on line 1 of app.scss
 
-1: $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap";
-2: $fa-font-path: "../bower_components/font-awesome/fonts";
+1: @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+2: @import 'font-awesome/scss/font-awesome';
 3: 
-4: @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-5: @import 'font-awesome/scss/font-awesome';
-6: 
-7: /**
-8:  * App-wide Styles
-9:  *\/
+4: /**
+5:  * App-wide Styles
+6:  *\/
 
 Backtrace:
-app.scss:4
+app.scss:1
 C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/tree/import_node.rb:67:in `rescue in import'
 C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/tree/import_node.rb:45:in `import'
 C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -52,4 +49,4 @@ C:/Ruby193/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.\A               Load path: C:/Users/km07/WebstormProjects/Angular-Fullstack/client/app\A         on line 4 of app.scss\A \A 1: $icon-font-path: \"../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap\";\A 2: $fa-font-path: \"../bower_components/font-awesome/fonts\";\A 3: \A 4: @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';\A 5: @import 'font-awesome/scss/font-awesome';\A 6: \A 7: /**\A 8:  * App-wide Styles\A 9:  */"; }
+  content: "Syntax error: File to import not found or unreadable: bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.\A               Load path: C:/Users/km07/WebstormProjects/Angular-Fullstack/client/app\A         on line 1 of app.scss\A \A 1: @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';\A 2: @import 'font-awesome/scss/font-awesome';\A 3: \A 4: /**\A 5:  * App-wide Styles\A 6:  */"; }
