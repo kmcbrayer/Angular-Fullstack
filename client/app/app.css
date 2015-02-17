@@ -3,7 +3,7 @@ Syntax error: File to import not found or unreadable: bootstrap-sass-official/ve
               Load path: C:/Users/km07/WebstormProjects/Angular-Fullstack/client/app
         on line 4 of app.scss
 
-1: $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+1: $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap";
 2: $fa-font-path: "/bower_components/font-awesome/fonts";
 3: 
 4: @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
@@ -52,4 +52,4 @@ C:/Ruby193/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.\A               Load path: C:/Users/km07/WebstormProjects/Angular-Fullstack/client/app\A         on line 4 of app.scss\A \A 1: $icon-font-path: \"/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/\";\A 2: $fa-font-path: \"/bower_components/font-awesome/fonts\";\A 3: \A 4: @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';\A 5: @import 'font-awesome/scss/font-awesome';\A 6: \A 7: /**\A 8:  * App-wide Styles\A 9:  */"; }
+  content: "Syntax error: File to import not found or unreadable: bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.\A               Load path: C:/Users/km07/WebstormProjects/Angular-Fullstack/client/app\A         on line 4 of app.scss\A \A 1: $icon-font-path: \"/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap\";\A 2: $fa-font-path: \"/bower_components/font-awesome/fonts\";\A 3: \A 4: @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';\A 5: @import 'font-awesome/scss/font-awesome';\A 6: \A 7: /**\A 8:  * App-wide Styles\A 9:  */"; }
