@@ -2,6 +2,7 @@
 
 var InstagramStrategy = require('passport-instagram').Strategy;
 var secrets = require('../config/secrets');
+var config = require('../config/environment');
 var log = require('../config/winston');
 var passport = require('passport')
 
