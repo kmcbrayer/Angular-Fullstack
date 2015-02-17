@@ -25,6 +25,13 @@ angular.module('angularFullstackApp')
       page : pageSetService.list[3]
     };
 
+    $scope.hasLoggedInData = function() {
+      if ($scope.mainPage.dataList.length === 0) {
+        return false;
+      }
+      return true;
+    };
+
     //set data
     twitterFeedService.query(function(data) {
       $scope.twitterPage.dataList = data;

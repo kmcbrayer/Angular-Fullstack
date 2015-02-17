@@ -18,6 +18,11 @@
 </div>
 
 <div ng-model="mainPage" class="page" ng-class="mainPage.page.position" touch-slide-controller>
+  <div ng-show="!hasLoggedInData()">
+    Click the links above to sign in and view your subscribed tweets, youtube uploads, and instagrams.
+    Please log out before leaving. I'm storing your social media api tokens in local storage.
+    View on a mobile device to use swiping functionality.
+  </div>
   <div ng-repeat="article in mainPage.dataList" class="hideBeneath" >
     <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
     <igram ng-if="article.type=='instagram'" igram="article"></igram>
