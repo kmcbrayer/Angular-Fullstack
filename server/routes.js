@@ -15,6 +15,8 @@ module.exports = function(app,passport,store) {
   app.use('/api/instagram', require('./api/instagram')(passport,store));
   //utiliy functions
   app.use('/api/utils', require('./api/utils')(store));
+  //user utilities
+  //app.use('/api/user', require('./api/user'));
 
   //passport auth
   require('./auth/twit_login')(app,store);

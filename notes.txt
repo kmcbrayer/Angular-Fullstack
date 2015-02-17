@@ -1,9 +1,8 @@
-- add database: mongo db
+- add database: postgresql
   button to save/favorite
 
 - navbar
   after login nav changes page spots and not link to auth
-
 - Write E2E tests
     page swipeing tests
     broadcast stuff?
