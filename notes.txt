@@ -87,7 +87,7 @@ https://gigadom.wordpress.com/2014/07/20/working-with-node-js-and-postgresql/
 Forever:
 in /home/Feeder
     stop: forever stopall
-    start: forever start server.js
+    start: NODE_ENV forever start dist/server/app.js
 
 images:
 settings gear:
