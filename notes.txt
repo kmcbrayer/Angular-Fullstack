@@ -1,3 +1,6 @@
+- set up environments
+  local ports and urls for oauth to use
+
 - add database: postgresql
   button to save/favorite
 
@@ -37,6 +40,7 @@ deployment procedure
 
     -set node like " SET NODE_ENV production"
     -figure out a way to do a deployment. heroku?
+
 PostgreSQL notes:
   install:
       download the .exe from db...thingy
