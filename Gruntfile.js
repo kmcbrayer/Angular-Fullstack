@@ -407,7 +407,6 @@ module.exports = function (grunt) {
         'sass',
       ],
       test: [
-        'sass',
       ],
       debug: {
         tasks: [
@@ -543,8 +542,15 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    bower: {
+      install: {
+        // blah blah blah
+      }
     }
   });
+
+  grunt.loadNpmTasks('grunt-bower-task');
 
   // Used for delaying livereload until after server has restarted
   grunt.registerTask('wait', function () {
@@ -611,10 +617,8 @@ module.exports = function (grunt) {
 
     else if (target === 'client') {
       return grunt.task.run([
-        'clean:server',
+        //'clean:server',
         'env:all',
-        'injector:sass',
-        'concurrent:test',
         'injector',
         'autoprefixer',
         'karma'
@@ -623,7 +627,6 @@ module.exports = function (grunt) {
 
     else if (target === 'e2e') {
       return grunt.task.run([
-        'clean:server',
         'env:all',
         'env:test',
         'injector:sass',
@@ -638,12 +641,14 @@ module.exports = function (grunt) {
 
     else grunt.task.run([
       'test:server',
-      'test:client'
+      'test:client',
+      'test:e2e'
     ]);
   });
 
   grunt.registerTask('build', [
     'clean:dist',
+    'bower:install',
     'injector:sass',
     'concurrent:dist',
     'injector',
@@ -662,7 +667,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
+    //'newer:jshint',
     'test',
     'build'
   ]);

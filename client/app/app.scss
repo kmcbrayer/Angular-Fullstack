@@ -1,8 +1,8 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
-@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-@import 'font-awesome/scss/font-awesome';
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import '../bower_components/font-awesome/scss/font-awesome';
 
 /**
  * App-wide Styles
@@ -44,25 +44,33 @@ body {
   top:0;
   left:0;
 }
+.downish {
+  top: 2em;
+}
 
 .first {
+  transition: top 0.75s;
   @extend .layer;
   z-index: 4;
 }
 .second {
   @extend .layer;
+  @extend .downish;
   z-index: 3;
 }
 .third {
   @extend .layer;
+  @extend .downish;
   z-index: 2;
 }
 .fourth{
   @extend .layer;
+  @extend .downish;
   z-index: 1;
 }
 .container {
   padding: 0 !important;
+  @extend .full_height;
 }
 #content {
   @extend .full_height;
@@ -77,7 +85,6 @@ body {
   min-height: 100% !important;
   height:100%;
   width:100%;
-  top:0;
   left:0;
 }
 
@@ -87,10 +94,6 @@ body {
 
 .clear {
   clear: both;
-}
-
-.container {
-  @extend .full_height;
 }
 
 .container-narrow > hr {

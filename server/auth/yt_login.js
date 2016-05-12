@@ -2,14 +2,15 @@
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var secrets = require('../config/secrets');
+var config = require('../config/environment')
 var log = require('../config/winston');
-var passport = require('passport');
+var passport = require('passport')
 
 module.exports = function(app,store) {
   passport.use(new GoogleStrategy({
       clientID        : secrets.youtube.app_id,
       clientSecret    : secrets.youtube.app_secret,
-      callbackURL     : "http://www.devsite.com:9000/auth/youtube/callback"
+      callbackURL     : "http://www."+config.siteName+"/auth/youtube/callback"
     },
     function(token, tokenSecret, profile, done) {
       process.nextTick(function(){

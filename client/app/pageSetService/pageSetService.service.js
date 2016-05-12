@@ -1,39 +1,11 @@
 'use strict';
 
 angular.module('angularFullstackApp')
-  .service('pageSetService', function() {
+  .service('pageSetService', function($rootScope, pageSet, UserService) {
     var self = this;
 
-    self.list = [
-      {
-        name: "Main",
-        isActive: true,
-        position: "first",
-        href: "#",
-        pageTarget : ''
-      },
-      {
-        name: "Twitter",
-        isActive: false,
-        position: "second",
-        href: "/authin/twitter",
-        pageTarget : '_self'
-      },
-      {
-        name: "Youtube",
-        isActive: false,
-        position: "third",
-        href: "/authin/youtube",
-        pageTarget : '_self'
-      },
-      {
-        name: "Instagram",
-        isActive: false,
-        position: "fourth",
-        href: "/authin/instagram",
-        pageTarget : '_self'
-      }
-    ];
+    self.list = pageSet;
+
     //page turn right
     self.pageTurnRight = function() {
       for (var i in self.list) {
@@ -51,7 +23,7 @@ angular.module('angularFullstackApp')
           self.list[i].isActive = false;
         }
       }
-    }
+    };
 
     self.pageTurnLeft = function() {
       for (var i in self.list) {
@@ -69,5 +41,6 @@ angular.module('angularFullstackApp')
           self.list[i].isActive = true;
         }
       }
-    }
+    };
+
   });

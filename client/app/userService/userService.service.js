@@ -13,7 +13,7 @@ angular.module('angularFullstackApp')
         var twitData = {
           isLoggedIn :  true,
           userName :    user._json.screen_name,
-          displayName : user.displayName,
+          displayName : user._json.name,
           photoUrl :    user.photos[0].value
         };
         userData.twitData = twitData;

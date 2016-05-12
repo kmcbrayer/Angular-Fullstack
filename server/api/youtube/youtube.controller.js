@@ -32,8 +32,8 @@ exports.subscriptions = function(store) {
               for (var i=0;i<dataList.length;i++){
                 var ytItem = {};
                 ytItem.type = 'youtube';
-                ytItem.videoId = dataList[i].contentDetails.upload.videoId
-                ytItem.date = moment(dataList[i].snippet.publishedAt);
+                ytItem.videoId = dataList[i].contentDetails.upload.videoId;
+                ytItem.date = moment(dataList[i].snippet.publishedAt)._d;
                 ytItem.title = dataList[i].snippet.title;
                 ytItem.description = dataList[i].snippet.description;
                 ytItem.thumb = dataList[i].snippet.thumbnails.default.url;
@@ -56,4 +56,4 @@ exports.subscriptions = function(store) {
       res.json(JSON.parse(store.getItem('youtube_cache')))
     }
   }
-}
+};

@@ -2,6 +2,7 @@
 
 var InstagramStrategy = require('passport-instagram').Strategy;
 var secrets = require('../config/secrets');
+var config = require('../config/environment');
 var log = require('../config/winston');
 var passport = require('passport')
 
@@ -9,7 +10,7 @@ module.exports = function(app,store) {
   passport.use(new InstagramStrategy({
       clientID: secrets.instagram.app_id,
       clientSecret: secrets.instagram.app_secret,
-      callbackURL: "http://www.devsite.com:9000/auth/instagram/callback"
+      callbackURL: "http://www."+config.siteName+"/auth/instagram/callback"
     },
     function(token, refreshToken, profile, done) {
       store.setItem('ig_token', token);

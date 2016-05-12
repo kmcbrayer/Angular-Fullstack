@@ -22,7 +22,7 @@ exports.feed = function(store) {
             for (var i=0;i<data.length;i++) {
               var ig = {};
               ig.type = 'instagram';
-              ig.date = moment.unix(data[i].created_time);
+              ig.date = moment.unix(data[i].created_time)._d;
               ig.photo = data[i].images.thumbnail.url;
               ig.user = data[i].user.username;
               ig.likeCount = data[i].likes.count;
@@ -31,11 +31,11 @@ exports.feed = function(store) {
               ig.link = data[i].link;
               dataList.push(ig);
             }
-            store.setItem('instagram_cache', JSON.stringify(dataList))
+            store.setItem('instagram_cache', JSON.stringify(dataList));
             res.json(dataList);
           },
           error : function(err) {
-            log.debug('ig error')
+            log.debug('ig error');
             res.send(utils.buildError(err));
           }
         });
@@ -48,5 +48,5 @@ exports.feed = function(store) {
       res.json(JSON.parse(store.getItem('instagram_cache')));
     }
   }
-}
+};
 

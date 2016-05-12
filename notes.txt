@@ -1,26 +1,21 @@
-- check slide directive
-- nav skips non active pages
-- make navbar links just change position of pages and not link to new url, set active...
-- use grunt for production:
-  set siteName
-  set move everything to a public directory
-- write new tests
-  0. mock objects for service data
-  1. all services return data:
-    length !== 0
-  2. main page dataList concats feeds:
-    length == var ammount
-  3. main page sorts feeds correctly:
-    use mock objets.date
-  4. pageSetService:
-    pageturning works
-    after call pageset[i].position ==='blah'
+- set up environments
+  local ports and urls for oauth to use
 
+- add database: postgresql
+  button to save/favorite
 
+- navbar
+  after login nav changes page spots and not link to auth
 - Write E2E tests
     page swipeing tests
+    broadcast stuff?
 
 - better sort algorythm for mainpage
+
+-------nice to haves--------------
+- database in postgresql
+- proper CSS media queries
+- if no youtube subscriptioins reply with top youtube links
 - research refresh tokens
 - feature: pull to refresh
     -timestamp api calls from backend
@@ -46,6 +41,40 @@ deployment procedure
     -set node like " SET NODE_ENV production"
     -figure out a way to do a deployment. heroku?
 
+PostgreSQL notes:
+  install:
+      download the .exe from db...thingy
+      data location at C:\Program Files\PostgreSql\9.4\data
+  user: postgres pword: km0****
+  start server:
+    postgres -D C:\Program Files\PostgreSQL\9.4\data
+  login command = psql --username=postgres
+  psql commands:
+    exit: \q
+    show databases: \l
+    show users: \du
+    create user:
+      CREATE USER <BLAH> WITH PASSWORD '<BLAH_BLAH>';
+    delete user://must remove all privileges first
+      DROP USER <BLAH>;
+    create database:
+      CREATE DATABASE <blah> TEMPLATE template0 CONNECTION LIMIT 100;
+    grant access to your user:
+      GRANT ALL PRIVILEGES ON DATABASE <blah> TO <blah_blah>;
+    remove privileges:
+      REVOKE ALL PRIVILEGES ON DATABASE <blah> FROM <blah_blah>;
+  set environment variables:
+    PGDATA = C:\Program Files\PostgreSQL\9.4\data
+  settings in postgresql.conf:
+    port = 5432
+    data_directory = '/Program Files/PostgreSQL/9.4/data'
+  run
+    pg_ctl start
+
+  correct sequence of events:
+  start server with : postgres -D '<your/data/directory>'
+  make a connection with : pg_ctl start
+  make changes with : psql --username=postgres
 
 E2E tests:
 in /Feeder, run:
@@ -62,7 +91,7 @@ https://gigadom.wordpress.com/2014/07/20/working-with-node-js-and-postgresql/
 Forever:
 in /home/Feeder
     stop: forever stopall
-    start: forever start server.js
+    start: NODE_ENV forever start dist/server/app.js
 
 images:
 settings gear:

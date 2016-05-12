@@ -1,24 +1,29 @@
 
-<div ng-model="instagramPage" class="page" ng-class="instagramPage.page.position">
-  <div ng-repeat="article in instagramPage.dataList" class="hideBeneath" touch-slide-controller>
+<div ng-model="instagramPage" class="page" ng-class="instagramPage.page.position" touch-slide-controller>
+  <div ng-repeat="article in instagramPage.dataList" class="hideBeneath" >
     <igram igram="article"></igram>
   </div>
 </div>
 
-<div ng-model="youtubePage" class="page" ng-class="youtubePage.page.position" >
-  <div ng-repeat="article in youtubePage.dataList" class="hideBeneath" touch-slide-controller>
+<div ng-model="youtubePage" class="page" ng-class="youtubePage.page.position" touch-slide-controller>
+  <div ng-repeat="article in youtubePage.dataList" class="hideBeneath" >
     <ytube ytube="article"></ytube>
   </div>
 </div>
 
-<div ng-model="twitterPage" class="page" ng-class="twitterPage.page.position" >
-  <div ng-repeat="tweet in twitterPage.dataList" class="hideBeneath" touch-slide-controller>
+<div ng-model="twitterPage" class="page" ng-class="twitterPage.page.position" touch-slide-controller>
+  <div ng-repeat="tweet in twitterPage.dataList" class="hideBeneath" >
     <tweet tweet="tweet"></tweet>
   </div>
 </div>
 
-<div ng-model="mainPage" class="page" ng-class="mainPage.page.position" >
-  <div ng-repeat="article in mainPage.dataList" class="hideBeneath" touch-slide-controller>
+<div ng-model="mainPage" class="page" ng-class="mainPage.page.position" touch-slide-controller>
+  <div ng-show="!hasLoggedInData()">
+    Click the links above to sign in and view your subscribed tweets, youtube uploads, and instagrams.
+    Please log out before leaving. I'm storing your social media api tokens in local storage.
+    View on a mobile device to use swiping functionality.
+  </div>
+  <div ng-repeat="article in mainPage.dataList" class="hideBeneath" >
     <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
     <igram ng-if="article.type=='instagram'" igram="article"></igram>
     <ytube ng-if="article.type=='youtube'" ytube="article"></ytube>
